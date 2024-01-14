@@ -19,7 +19,7 @@ import {
   useCarouselItem,
   CarouselItems,
   useCarousel,
-} from "chakra-framer-carousel";
+} from "../chakraCarousel";
 import {
   ArrowBackIcon,
   ArrowForwardIcon,

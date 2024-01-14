@@ -15,7 +15,6 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "framer-motion": "^10.18.0",
-    "chakra-framer-carousel": "0.4.2",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
