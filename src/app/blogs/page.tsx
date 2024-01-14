@@ -1,7 +1,7 @@
 "use client";
 
-import { Footer } from "@/components/componen_app/footer";
-import { Navbar } from "@/components/componen_app/navbar";
+import { Footer } from "@/components/component_shared/footer";
+import { Navbar } from "@/components/component_shared/navbar";
 import { WarningTwoIcon } from "@chakra-ui/icons";
 import { AbsoluteCenter, Box, Center, Text } from "@chakra-ui/react";
 

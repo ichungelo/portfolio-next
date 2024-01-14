@@ -9,6 +9,7 @@ import {
   VStack,
   createIcon,
   Link,
+  Flex,
 } from "@chakra-ui/react";
 import { serifDisplay } from "@/app/fonts";
 import React from "react";
@@ -17,96 +18,94 @@ import { DownloadIcon } from "@chakra-ui/icons";
 const Final = () => {
   return (
     <>
-      <HStack
-        justifyContent={"center"}
-        align={"center"}
-        p={"10px 20px"}
-        spacing={10}
-      >
-        <Box>
-          <VStack align={"center"}>
-            <Heading
+      <Box>
+        <VStack align={"center"}>
+          <Heading
+            fontFamily={serifDisplay.style.fontFamily}
+            fontSize={120}
+            wordBreak={"break-all"}
+            textAlign={"center"}
+          >
+            <Highlight query="?" styles={{ color: "green" }}>
+              Interested?
+            </Highlight>
+          </Heading>
+          <Flex
+            gap={10}
+            p="24px 36px"
+            direction={{ base: "column", md: "row" }}
+          >
+            <Button
+              size="md"
+              variant="link"
+              colorScheme="black"
               fontFamily={serifDisplay.style.fontFamily}
-              as="h1"
-              fontSize={120}
             >
-              <Highlight query="?" styles={{ color: "green" }}>
-                Interested?
-              </Highlight>
-            </Heading>
-            <ButtonGroup gap={10} p="24px 36px">
-              <Button
-                size="md"
-                variant="link"
-                colorScheme="black"
-                fontFamily={serifDisplay.style.fontFamily}
+              <a
+                href={"/cv/cv_krisna_satriadi.pdf"}
+                download="cv_krisna_satriadi"
+                target="_blank"
+                rel="noreferrer"
               >
-                <a
-                  href={"/cv/cv_krisna_satriadi.pdf"}
-                  download="cv_krisna_satriadi"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <VStack p={10}>
-                    <Heading
-                      fontFamily={serifDisplay.style.fontFamily}
-                      fontSize={24}
-                    >
-                      <Highlight query="." styles={{ color: "green" }}>
-                        Download CV.
-                      </Highlight>
-                    </Heading>
-                    <DownloadIcon boxSize={10} color={"green"} />
-                  </VStack>
-                </a>
-              </Button>
-              <Button
-                size="md"
-                variant="link"
-                colorScheme="black"
-                fontFamily={serifDisplay.style.fontFamily}
+                <VStack p={10}>
+                  <Heading
+                    fontFamily={serifDisplay.style.fontFamily}
+                    fontSize={24}
+                  >
+                    <Highlight query="." styles={{ color: "green" }}>
+                      Download CV.
+                    </Highlight>
+                  </Heading>
+                  <DownloadIcon boxSize={10} color={"green"} />
+                </VStack>
+              </a>
+            </Button>
+            <Button
+              size="md"
+              variant="link"
+              colorScheme="black"
+              fontFamily={serifDisplay.style.fontFamily}
+            >
+              <Link href="https://github.com/ichungelo" target="_blank">
+                <VStack p={10}>
+                  <Heading
+                    fontFamily={serifDisplay.style.fontFamily}
+                    fontSize={24}
+                  >
+                    <Highlight query="." styles={{ color: "green" }}>
+                      Open Github.
+                    </Highlight>
+                  </Heading>
+                  <GithubIcon boxSize={10} />
+                </VStack>
+              </Link>
+            </Button>
+            <Button
+              size="md"
+              variant="link"
+              colorScheme="black"
+              fontFamily={serifDisplay.style.fontFamily}
+            >
+              <Link
+                href="https://www.linkedin.com/in/krisnasatriadi/"
+                target="_blank"
               >
-                <Link href="https://github.com/ichungelo" target="_blank">
-                  <VStack p={10}>
-                    <Heading
-                      fontFamily={serifDisplay.style.fontFamily}
-                      fontSize={24}
-                    >
-                      <Highlight query="." styles={{ color: "green" }}>
-                        Open Github.
-                      </Highlight>
-                    </Heading>
-                    <GithubIcon boxSize={10} />
-                  </VStack>
-                </Link>
-              </Button>
-              <Button
-                size="md"
-                variant="link"
-                colorScheme="black"
-                fontFamily={serifDisplay.style.fontFamily}
-              >
-                <Link
-                  href="https://www.linkedin.com/in/krisnasatriadi/"
-                  target="_blank"
-                >
-                  <VStack p={10}>
-                    <Heading
-                      fontFamily={serifDisplay.style.fontFamily}
-                      fontSize={24}
-                    >
-                      <Highlight query="." styles={{ color: "green" }}>
-                        Open Linkedin.
-                      </Highlight>
-                    </Heading>
-                    <LinkedinIcon boxSize={10} />
-                  </VStack>
-                </Link>
-              </Button>
-            </ButtonGroup>
-          </VStack>
-        </Box>
-      </HStack>
+                <VStack p={10}>
+                  <Heading
+                    fontFamily={serifDisplay.style.fontFamily}
+                    fontSize={24}
+                  >
+                    <Highlight query="." styles={{ color: "green" }}>
+                      Open Linkedin.
+                    </Highlight>
+                  </Heading>
+                  <LinkedinIcon boxSize={10} />
+                </VStack>
+              </Link>
+            </Button>
+          </Flex>
+        </VStack>
+      </Box>
     </>
   );
 };

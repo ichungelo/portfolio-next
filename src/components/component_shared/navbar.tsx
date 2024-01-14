@@ -20,7 +20,7 @@ const Navbar = ({ isHomepage }: { isHomepage: boolean }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box p="0 34px" color="grey">
-      <Flex>
+      <Flex p={{ base: 4 }} direction={{ base: "column", md: "row"}}>
         <Box p="10px 36px">
           <Center p={2}>
             <Image maxH="28px" p="0 1px" src="/logo.svg" alt="ichun logo" />
