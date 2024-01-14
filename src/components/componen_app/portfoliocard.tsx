@@ -28,9 +28,13 @@ import {
 
 const PortfolioCard = ({ portfolio }: { portfolio: Portfolio }) => {
   return (
-    <VStack align={"center"}>
+    <Flex flexDirection={"column"}>
       <VStack align={"start"} spacing={4}>
-        <Heading fontFamily={serifDisplay.style.fontFamily} textAlign={"left"} as={"h3"}>
+        <Heading
+          fontFamily={serifDisplay.style.fontFamily}
+          textAlign={"left"}
+          as={"h3"}
+        >
           <ChevronRightIcon color={"green"} />
           {portfolio.title}
         </Heading>
@@ -44,25 +48,27 @@ const PortfolioCard = ({ portfolio }: { portfolio: Portfolio }) => {
           })}
         </UnorderedList>
       </VStack>
-      <Center>
-        <Carousel>
-          <VStack>
-            <Center>
-              <CarouselItems>
-                {portfolio?.images?.map((image, index) => {
-                  return (
-                    <CarouselItem index={index} key={image}>
-                      <CardCarousel image={image} />
-                    </CarouselItem>
-                  );
-                })}
-              </CarouselItems>
-            </Center>
-            <Toolbar imageLen={portfolio?.images?.length} />
-          </VStack>
-        </Carousel>
-      </Center>
-    </VStack>
+      <VStack align={"center"} p={"12px 0"}>
+        <Center>
+          <Carousel>
+            <VStack>
+              <Center>
+                <CarouselItems>
+                  {portfolio?.images?.map((image, index) => {
+                    return (
+                      <CarouselItem index={index} key={image}>
+                        <CardCarousel image={image} />
+                      </CarouselItem>
+                    );
+                  })}
+                </CarouselItems>
+              </Center>
+              <Toolbar imageLen={portfolio?.images?.length} />
+            </VStack>
+          </Carousel>
+        </Center>
+      </VStack>
+    </Flex>
   );
 };
 
