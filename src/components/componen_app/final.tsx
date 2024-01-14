@@ -41,10 +41,11 @@ const Final = () => {
                 colorScheme="black"
                 fontFamily={serifDisplay.style.fontFamily}
               >
-                <Link
-                  href="/cv_krisna.satriadi.svg"
-                  download={"cv_krisna_satriadi"}
+                <a
+                  href={"/cv/cv_krisna_satriadi.pdf"}
+                  download="cv_krisna_satriadi"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <VStack p={10}>
                     <Heading
@@ -57,7 +58,7 @@ const Final = () => {
                     </Heading>
                     <DownloadIcon boxSize={10} color={"green"} />
                   </VStack>
-                </Link>
+                </a>
               </Button>
               <Button
                 size="md"
