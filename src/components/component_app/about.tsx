@@ -13,7 +13,7 @@ import { serifDisplay } from "@/app/fonts";
 const About = () => {
   return (
     <>
-      <Container maxW={"70%"} p={20}>
+      <Container maxW={"70%"} p={"40px 0"}>
         <VStack align={"start"}>
           <Heading
             fontFamily={serifDisplay.style.fontFamily}

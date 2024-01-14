@@ -12,6 +12,7 @@ import {
   ListItem,
   Text,
   UnorderedList,
+  Container,
 } from "@chakra-ui/react";
 import {
   Carousel,
@@ -28,28 +29,28 @@ import {
 
 const PortfolioCard = ({ portfolio }: { portfolio: Portfolio }) => {
   return (
-    <Flex flexDirection={"column"}>
-      <VStack align={"start"} spacing={4}>
-        <Heading
-          fontFamily={serifDisplay.style.fontFamily}
-          textAlign={"left"}
-          as={"h3"}
-        >
-          <ChevronRightIcon color={"green"} />
-          {portfolio.title}
-        </Heading>
-        <Heading size={"sm"} fontFamily={serifDisplay.style.fontFamily}>
-          {portfolio.date}
-        </Heading>
-        <Text>{portfolio.description}</Text>
-        <UnorderedList>
-          {portfolio?.details?.map((detail) => {
-            return <ListItem key={detail}>{detail}</ListItem>;
-          })}
-        </UnorderedList>
-      </VStack>
-      <VStack align={"center"} p={"12px 0"}>
-        <Center>
+    <Container maxW={"100%"} p={"40px 0"}>
+      <Flex flexDirection={"column"}>
+        <VStack align={"start"} spacing={4}>
+          <Heading
+            fontFamily={serifDisplay.style.fontFamily}
+            textAlign={"left"}
+            as={"h3"}
+          >
+            <ChevronRightIcon color={"green"} />
+            {portfolio.title}
+          </Heading>
+          <Heading size={"sm"} fontFamily={serifDisplay.style.fontFamily}>
+            {portfolio.date}
+          </Heading>
+          <Text>{portfolio.description}</Text>
+          <UnorderedList>
+            {portfolio?.details?.map((detail) => {
+              return <ListItem key={detail}>{detail}</ListItem>;
+            })}
+          </UnorderedList>
+        </VStack>
+        <Container maxW={"70%"}>
           <Carousel>
             <VStack>
               <Center>
@@ -66,9 +67,9 @@ const PortfolioCard = ({ portfolio }: { portfolio: Portfolio }) => {
               <Toolbar imageLen={portfolio?.images?.length} />
             </VStack>
           </Carousel>
-        </Center>
-      </VStack>
-    </Flex>
+        </Container>
+      </Flex>
+    </Container>
   );
 };
 

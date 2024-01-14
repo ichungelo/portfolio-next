@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   HStack,
   Heading,
   Highlight,
@@ -13,7 +14,7 @@ import React from "react";
 const Profile = () => {
   return (
     <>
-      <HStack justifyContent={"center"} align={"center"} p={"10px 20px"} spacing={10}>
+      <Flex justifyContent={"space-evenly"} align={"center"} p={"10px 20px"} flexWrap={"wrap"}>
         <Box>
           <VStack align={"end"}>
             <Heading
@@ -40,7 +41,7 @@ const Profile = () => {
         <Box>
           <Image maxH={440} src="/profile-photo.png" alt="krisna photo" />
         </Box>
-      </HStack>
+      </Flex>
     </>
   );
 };
