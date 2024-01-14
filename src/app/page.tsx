@@ -17,7 +17,7 @@ const Home = () => {
       <Skills />
       <Portfolios />
       <Final/>
-      <Footer/>
+      <Footer isHomepage={true}/>
     </>
   );
 };

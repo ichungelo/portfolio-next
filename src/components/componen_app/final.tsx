@@ -5,12 +5,10 @@ import {
   HStack,
   Heading,
   Highlight,
-  Icon,
-  Image,
-  Spacer,
   Text,
   VStack,
   createIcon,
+  Link,
 } from "@chakra-ui/react";
 import { serifDisplay } from "@/app/fonts";
 import React from "react";
@@ -40,36 +38,69 @@ const Final = () => {
               <Button
                 size="md"
                 variant="link"
-                color={"green"}
+                colorScheme="black"
                 fontFamily={serifDisplay.style.fontFamily}
               >
-                <VStack p={10}>
-                  <Text color={"green"}>Download CV</Text>
-                  <DownloadIcon boxSize={10} />
-                </VStack>
+                <Link
+                  href="/cv_krisna.satriadi.svg"
+                  download={"cv_krisna_satriadi"}
+                  target="_blank"
+                >
+                  <VStack p={10}>
+                    <Heading
+                      fontFamily={serifDisplay.style.fontFamily}
+                      fontSize={24}
+                    >
+                      <Highlight query="." styles={{ color: "green" }}>
+                        Download CV.
+                      </Highlight>
+                    </Heading>
+                    <DownloadIcon boxSize={10} color={"green"} />
+                  </VStack>
+                </Link>
               </Button>
               <Button
                 size="md"
                 variant="link"
-                color={"green"}
+                colorScheme="black"
                 fontFamily={serifDisplay.style.fontFamily}
               >
-                <VStack p={10}>
-                  <Text color={"green"}>Open Github</Text>
-                  <GithubIcon boxSize={10} />
-                </VStack>
+                <Link href="https://github.com/ichungelo" target="_blank">
+                  <VStack p={10}>
+                    <Heading
+                      fontFamily={serifDisplay.style.fontFamily}
+                      fontSize={24}
+                    >
+                      <Highlight query="." styles={{ color: "green" }}>
+                        Open Github.
+                      </Highlight>
+                    </Heading>
+                    <GithubIcon boxSize={10} />
+                  </VStack>
+                </Link>
               </Button>
               <Button
                 size="md"
                 variant="link"
-                color={"green"}
+                colorScheme="black"
                 fontFamily={serifDisplay.style.fontFamily}
-                
               >
-                <VStack p={10}>
-                  <Text color={"green"}>Open Linkedin</Text>
-                  <LinkedinIcon boxSize={10} />
-                </VStack>
+                <Link
+                  href="https://www.linkedin.com/in/krisnasatriadi/"
+                  target="_blank"
+                >
+                  <VStack p={10}>
+                    <Heading
+                      fontFamily={serifDisplay.style.fontFamily}
+                      fontSize={24}
+                    >
+                      <Highlight query="." styles={{ color: "green" }}>
+                        Open Linkedin.
+                      </Highlight>
+                    </Heading>
+                    <LinkedinIcon boxSize={10} />
+                  </VStack>
+                </Link>
               </Button>
             </ButtonGroup>
           </VStack>
