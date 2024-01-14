@@ -20,37 +20,48 @@ import {
   CarouselItems,
   useCarousel,
 } from "chakra-framer-carousel";
-import { ArrowBackIcon, ArrowForwardIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import {
+  ArrowBackIcon,
+  ArrowForwardIcon,
+  ChevronRightIcon,
+} from "@chakra-ui/icons";
 
 const PortfolioCard = ({ portfolio }: { portfolio: Portfolio }) => {
   return (
-    <VStack align={"start"} spacing={4}>
-      <Heading fontFamily={serifDisplay.style.fontFamily} textAlign={"left"}>
-        <ChevronRightIcon color={"green"}/>{portfolio.title}
-      </Heading>
-      <Heading size={"sm"} fontFamily={serifDisplay.style.fontFamily}>
-        {portfolio.date}
-      </Heading>
-      <Text>{portfolio.description}</Text>
-      <UnorderedList>
-        {portfolio?.details?.map((detail) => {
-          return <ListItem key={detail}>{detail}</ListItem>;
-        })}
-      </UnorderedList>
-      <Carousel>
-        <Center>
-          <CarouselItems>
-            {portfolio?.images?.map((image, index) => {
-              return (
-                <CarouselItem index={index} key={image}>
-                  <CardCarousel image={image} />
-                </CarouselItem>
-              );
-            })}
-          </CarouselItems>
-        </Center>
-        <Toolbar imageLen={portfolio?.images?.length} />
-      </Carousel>
+    <VStack align={"center"}>
+      <VStack align={"start"} spacing={4}>
+        <Heading fontFamily={serifDisplay.style.fontFamily} textAlign={"left"} as={"h3"}>
+          <ChevronRightIcon color={"green"} />
+          {portfolio.title}
+        </Heading>
+        <Heading size={"sm"} fontFamily={serifDisplay.style.fontFamily}>
+          {portfolio.date}
+        </Heading>
+        <Text>{portfolio.description}</Text>
+        <UnorderedList>
+          {portfolio?.details?.map((detail) => {
+            return <ListItem key={detail}>{detail}</ListItem>;
+          })}
+        </UnorderedList>
+      </VStack>
+      <Center>
+        <Carousel>
+          <VStack>
+            <Center>
+              <CarouselItems>
+                {portfolio?.images?.map((image, index) => {
+                  return (
+                    <CarouselItem index={index} key={image}>
+                      <CardCarousel image={image} />
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselItems>
+            </Center>
+            <Toolbar imageLen={portfolio?.images?.length} />
+          </VStack>
+        </Carousel>
+      </Center>
     </VStack>
   );
 };
