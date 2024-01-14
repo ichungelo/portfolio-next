@@ -27,9 +27,7 @@ const Portfolios = () => {
           </Heading>
           {portfolios.map((portfolio) => {
             return (
-              <Box key={portfolio.title} p={10}>
                 <PortfolioCard portfolio={portfolio} key={portfolio.title} />
-              </Box>
             );
           })}
         </VStack>
