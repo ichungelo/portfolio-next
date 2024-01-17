@@ -6,6 +6,7 @@ import {
   Heading,
   Highlight,
   Image,
+  Spacer,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -15,8 +16,8 @@ import React from "react";
 const Profile = () => {
   return (
     <>
-      <Flex justifyContent={"center"} align={"center"} p={"10px 20px"} flexWrap={"wrap"}>
-        <Box>
+      <Flex justifyContent={"center"} align={"center"} flexWrap={"wrap"}>
+        <Box paddingX={10}>
           <VStack align={"end"}>
             <Heading
               fontFamily={serifDisplay.style.fontFamily}
@@ -27,20 +28,19 @@ const Profile = () => {
                 Hello,
               </Highlight>
             </Heading>
-            <Text fontSize={38} fontFamily={serifDisplay.style.fontFamily}>
+            <Text fontSize={38} fontFamily={serifDisplay.style.fontFamily} align={"end"}>
               <Highlight query="Krisna Satriadi" styles={{ color: "green" }}>
                 I am Krisna Satriadi
               </Highlight>
             </Text>
-            <Text fontSize={24} fontFamily={serifDisplay.style.fontFamily}>
+            <Text fontSize={24} fontFamily={serifDisplay.style.fontFamily} align={"end"}>
             <Highlight query="Backend Engineer" styles={{ color: "green" }}>
               Your Backend Engineer
               </Highlight>
             </Text>
           </VStack>
         </Box>
-        <Divider w={8}/>
-        <Box>
+        <Box paddingX={10}>
           <Image maxH={440} src="/profile-photo.png" alt="krisna photo" />
         </Box>
       </Flex>
